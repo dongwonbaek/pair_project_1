@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+  <div>
+    <h1>리뷰 작성</h1>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">리뷰 번호</th>
+        <th scope="col">리뷰 제목</th>
+        <th scope="col">작성 시간</th>
+        <th scope="col">수정 시간</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for review in reviews %}
+      <tr>
+        <th scope="row">{{review.id}}</th>
+        <td><a href="{% url 'articles:detail' review.id %}">{{review.title}}</a></td>
+        <td>{{review.created_at}}</td>
+        <td>{{review.created_at}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+  <a href="{% url 'articles:create' %}">리뷰작성</a>
+
+
+  {% endblock content %}
