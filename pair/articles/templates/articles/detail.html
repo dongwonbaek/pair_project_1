@@ -5,7 +5,7 @@
   <div class="container my-4">
     <h1 class="fw-bold my-3">리뷰 내용</h1>
     <h4 class="my-3">제목 : {{review.title}} </h4>
-    <h5 class="my-3">작성일자 : {{review.updated_at}}</h5>
+    <p class="my-3">작성일자 : {{review.updated_at}}</p>
     <p class="border my-3 p-3">{{review.content}}</p>
     <div class="float-end">
       <a href="{% url 'articles:delete' review.id %}" class="btn btn-dark" data-bs-toggle="modal"
