@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h1>리뷰 내용</h1>
-<h2>{{review.title}}</h2>
-<p>{{review.content}}</p>
-<p>{{review.created_at}}</p>
-<a href="{% url 'articles:delete' review.id %}">삭제</a>
-<a href="{% url 'articles:edit' review.id %}">수정</a>
-
-
-
-
+<div class="d-flex flex-column justify-content-center align-items-center m-5">
+  <div class="container my-5">
+    <h1 class="">리뷰 내용</h1>
+    <h4 class="">제목 : {{review.title}} </h4>
+    <h5 class="">작성일자 : {{review.updated_at}}</h5>
+    <p class="border">{{review.content}}</p>
+    <div class="float-end">
+      <a class="btn btn-dark" href="{% url 'articles:delete' review.id %}">삭제</a>
+      <a class="btn btn-dark" href="{% url 'articles:edit' review.id %}">수정</a>
+      <a class="btn btn-dark" href="{% url 'articles:index' %}">돌아가기</a>
+    </div>
+  </div>
+</div>
 
 {% endblock content %}

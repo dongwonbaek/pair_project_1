@@ -3,17 +3,19 @@
 {% block content %}
 
 <body>
-  <form action="{% url 'articles:write' %}">
-    <div class="mb-3">
-      <label class="form-label">제목</label>
-      <input type="text" class="form-control" name='title'>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">내용</label>
-      <textarea class="form-control" name="content" rows="3"></textarea>
-      <input type="submit">
-    </div>
-  </form>
+  <div class="container my-5">
+    <form action="{% url 'articles:write' %}">
+      <div class="mb-3">
+        <label class="form-label fs-3 fw-bold">제목</label>
+        <input type="text" class="form-control" name='title'>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fs-3 fw-bold">내용</label>
+        <textarea class="form-control" name="content" rows="3"></textarea>
+        <input class="btn btn-dark float-end my-3" type="submit" value="작성하기">
+      </div>
+    </form>
+  </div>
 
 </body>
 
