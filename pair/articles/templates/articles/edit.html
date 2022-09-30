@@ -1,23 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<body>
-  <div class="container my-5">
-    <h2>내용 수정</h2>
-    <form action="{% url 'articles:update' review.id %}">
-      <div class="mb-3">
-        <label class="form-label">제목</label>
-        <input type="text" class="form-control" name='title'>
+<div class="container my-5">
+  <h1 class="fw-bold py-3">내용 수정</h1>
+  <form action="{% url 'articles:update' review.id %}">
+    <div class="mb-3">
+      <label class="form-label fs-3 ">제목</label>
+      <input type="text" class="form-control" name='title' value="{{ review.title }}">
+    </div>
+    <div class="mb-3">
+      <label class="form-label fs-3 ">내용</label>
+      <textarea class="form-control" name="content" rows="3">{{ review.content }}</textarea>
+      <div class="my-3 float-end">
+        <input class="btn btn-dark" type="submit" value="수정하기">
+        <a class="btn btn-dark" href="{% url 'articles:detail' review.id %}">돌아가기</a>
       </div>
-      <div class="mb-3">
-        <label class="form-label">내용</label>
-        <textarea class="form-control" name="content" rows="3"></textarea>
-        <input class="btn btn-dark my-3 float-end" type="submit" value="수정하기">
-      </div>
-    </form>
-  </div>
-
-</body>
-
+    </div>
+  </form>
+</div>
 {% endblock content %}
